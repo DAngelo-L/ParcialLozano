@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ParcialFutbolModelStoreContainer" CdmEntityContainer="ParcialFutbolEntities">
+    <EntitySetMapping Name="Equipos">
+      <EntityTypeMapping TypeName="ParcialFutbolModel.Equipos">
+        <MappingFragment StoreEntitySet="Equipos">
+          <ScalarProperty Name="ID_Equipo" ColumnName="ID_Equipo" />
+          <ScalarProperty Name="Nombre_Equipo" ColumnName="Nombre_Equipo" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Estadio" ColumnName="Estadio" />
+          <ScalarProperty Name="Copas_Ganadas" ColumnName="Copas_Ganadas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jugadores">
+      <EntityTypeMapping TypeName="ParcialFutbolModel.Jugadores">
+        <MappingFragment StoreEntitySet="Jugadores">
+          <ScalarProperty Name="ID_Jugador" ColumnName="ID_Jugador" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="Goles" ColumnName="Goles" />
+          <ScalarProperty Name="Asistencias" ColumnName="Asistencias" />
+          <ScalarProperty Name="ID_Equipo" ColumnName="ID_Equipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

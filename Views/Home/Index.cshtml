@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Base de dato.Futbol";
+}
+
+
+<main>
+
+
+
+    <link href="~/Content/Carrusel.css" rel="stylesheet" />
+    <!-- Carrusel de emojis -->
+    <section class="row">
+        <div class="wrapper">
+            <div class="carousel">
+                @* Datos de los emojis *@
+                @{
+                    var emojis = new[] {
+                        new { Icono = "⚽", Nombre = "Equipos", Descripcion = "Liga Nacional", Link = Url.Content("~/Equipo/Index") },
+                        new { Icono = "👕", Nombre = "Jugadores", Descripcion = "Delantero", Link = Url.Content("~/Jugador/Index") },
+                        new { Icono = "🏟️", Nombre = "Equipos", Descripcion = "Liga Internacional", Link = Url.Content("~/Equipo/Index") },
+                        new { Icono = "🏆", Nombre = "Jugadores", Descripcion = "Liga de Campeones", Link = Url.Content("~/Jugador/Index") }
+                    };
+                }
+
+                @* Iteración sobre los emojis para mostrar cada uno en el carrusel *@
+                @foreach (var emoji in emojis)
+                {
+                    <div class="carousel__item">
+                        <div class="carousel__item-head">
+                            <!-- Enlace a la URL correspondiente para cada emoji -->
+                            <a href="@emoji.Link" class="emoji-link">
+                                @emoji.Icono  <!-- Muestra el emoji -->
+                            </a>
+                        </div>
+                        <div class="carousel__item-body">
+                            <p class="title">@emoji.Nombre</p>
+                            <p>@emoji.Descripcion</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+</main>

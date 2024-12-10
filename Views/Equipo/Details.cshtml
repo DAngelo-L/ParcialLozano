@@ -1,0 +1,58 @@
+﻿@model ExamenParcialLozano.Models.Equipos
+
+@{
+    ViewBag.Title = "DetailsE";
+}
+
+<h2>DetailsE</h2>
+
+<div>
+    <h4>Equipos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_Equipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_Equipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_Equipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_Equipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ciudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ciudad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estadio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estadio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Copas_Ganadas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Copas_Ganadas)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

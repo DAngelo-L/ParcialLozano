@@ -1,0 +1,82 @@
+﻿@model IEnumerable<ExamenParcialLozano.Models.Jugadores>
+
+@{
+    ViewBag.Title = "Jugadores";
+}
+
+<h2>Jugadores</h2>
+
+
+
+<head>
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/foto-gratis/resumen-superficie-texturas-muro-piedra-hormigon-blanco_74190-8189.jpg');
+            background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+            background-position: center center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            height: 100vh; /* Hace que el fondo cubra toda la pantalla */
+            margin: 0; /* Elimina márgenes */
+        }
+    </style>
+</head>
+
+
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create", new {@class="btn btn-sucess"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_Jugador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Edad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Goles)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Asistencias)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_Equipo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_Jugador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Edad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Goles)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Asistencias)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_Equipo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID_Jugador }, new {@class="btn btn-warning"}) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID_Jugador }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID_Jugador }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

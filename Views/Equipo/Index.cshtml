@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ExamenParcialLozano.Models.Equipos>
+
+@{
+    ViewBag.Title = "Equipos";
+}
+
+<h2>Equipos</h2>
+
+<head>
+    <style>
+        body {
+            background-image: url('https://static.vecteezy.com/system/resources/previews/002/961/000/large_2x/light-red-gradient-blur-backdrop-vector.jpg');
+            background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+            background-position: center center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            height: 100vh; /* Hace que el fondo cubra toda la pantalla */
+            margin: 0; /* Elimina márgenes */
+        }
+    </style>
+</head>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create",new {@class="btn btn-sucess"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_Equipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre_Equipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ciudad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estadio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Copas_Ganadas)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_Equipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_Equipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ciudad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estadio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Copas_Ganadas)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_Equipo },new {@class= "btn btn-warning" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID_Equipo }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID_Equipo }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>
